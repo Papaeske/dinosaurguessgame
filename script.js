@@ -115,11 +115,11 @@ function updateScore() {
 }
 
 function handleCorrectGuess() {
-    // Give the player one point for a correct guess
+    // Give the player one point for a correct guess!
     score++;
     updateScore();
   }
-  
+
   function handleWrongGuess() {
     // Deduct one point for a wrong guess
     score--;
