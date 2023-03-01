@@ -107,9 +107,23 @@ const hints = [
 let word; // the word to guess
 let guesses = []; // letters that have been guessed
 let lives; // number of lives remaining
-let score = 0;
+let score = 0; // number of correct guesses
 
-function updateScore() {
+
+
+const letters = document.querySelectorAll('.letter');
+letters.forEach(letter => {
+  letter.addEventListener('click', () => {
+    const guessedLetter = letter.textContent;
+    handleGuess(guessedLetter.toLowerCase());
+    // Check if the letter is in the secret word
+    // Update the display and decrement the number of guesses left accordingly
+  });
+});
+
+
+
+function updateScore() { // update the score in the DOM
     const scoreContainer = document.getElementById('score-container');
     scoreContainer.innerText = `Score: ${score}`;
 }
@@ -126,14 +140,14 @@ function handleCorrectGuess() {
     updateScore();
   }
 
-function chooseWord() {
+function chooseWord() { // choose a random word from the words array
     const index = Math.floor(Math.random() * words.length);
     word = words[index];
     dinosaurName = dinosaurs[index];
     dinosaurHint = hints[index];
 }
 
-function displayWord() {
+function displayWord() { // display the word in the DOM
     let wordContainer = document.getElementById('word-container');
     wordContainer.innerHTML = '';
     for (let i = 0; i < word.length; i++) {

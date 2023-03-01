@@ -77,6 +77,28 @@ button:hover {
 	max-width: 200px;
 }  
 
+#keyboard-container {
+    display: flex;
+    justify-content: center; /* center the keyboard horizontally */
+    align-items: center; /* center the keyboard vertically */
+    flex-wrap: wrap;
+  }
+  
+  .letter {
+	display: flex;
+	justify-content: center; /* center the letter horizontally */
+	align-items: center; /* center the letter vertically */
+	width: 60px;
+	height: 60px;
+	margin: 5px;
+	border: 1px solid #333;
+	border-radius: 5px;
+	font-size: 30px;
+	text-align: justify;
+	cursor: pointer;
+}
+  
+
 @keyframes slideIn {
 	from {
 	  transform: translateX(-100%);
@@ -88,4 +110,4 @@ button:hover {
   
   .slide-in {
 	animation: slideIn 0.5s forwards;
-  }  
+  }
