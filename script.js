@@ -103,13 +103,33 @@ const hints = [
     'A heavily armored herbivorous dinosaur with long, pointed spikes on its back and tail.',
     'A herbivorous dinosaur with a beak and a crest on its head.'
 ];
+//list of gifs
+const gifs = [
+    "./fails/1.gif",
+    "./fails/2.gif",
+    "./fails/3.gif",
+    "./fails/4.gif",
+    "./fails/5.gif",
+    "./fails/6.gif",
+    "./fails/7.gif",
+    "./fails/8.gif",
+    "./fails/9.gif",
+];
 
 let word; // the word to guess
 let guesses = []; // letters that have been guessed
 let lives; // number of lives remaining
 let score = 0; // number of correct guesses
 
+const button = document.getElementById("restart-button-2");
 
+button.addEventListener("mouseover", function() {
+  button.textContent = "good luck";
+});
+
+button.addEventListener("mouseout", function() {
+  button.textContent = "Play Again";
+});
 
 const letters = document.querySelectorAll('.letter');
 letters.forEach(letter => {
@@ -117,11 +137,9 @@ letters.forEach(letter => {
     const guessedLetter = letter.textContent;
     handleGuess(guessedLetter.toLowerCase());
     // Check if the letter is in the secret word
-    // Update the display and decrement the number of guesses left accordingly
+    // Update the display and decrement the number of    guesses left accordingly
   });
 });
-
-
 
 function updateScore() { // update the score in the DOM
     const scoreContainer = document.getElementById('score-container');
@@ -131,12 +149,6 @@ function updateScore() { // update the score in the DOM
 function handleCorrectGuess() {
     // Give the player one point for a correct guess!
     score++;
-    updateScore();
-  }
-
-  function handleWrongGuess() {
-    // Deduct one point for a wrong guess
-    score--;
     updateScore();
   }
 
@@ -173,10 +185,20 @@ function checkWin() {
 
 function checkLose() {
     if (lives === 0) {
-        alert('You lose! The word was ' + word + '.');
-        handleWrongGuess();
-        restart();
+        displayFunnyGif();
+        score--;
+        updateScore();
     }
+}
+
+function displayFunnyGif() {
+  //get a random gif from 'gifs' array an set is as the src of the img
+  let correct = document.getElementById('correct');
+  correct.innerHTML = 'Correct name: ' + dinosaurName;
+
+  let gif = document.getElementById('funny-gif');
+  gif.src = gifs[Math.floor(Math.random() * gifs.length)];
+  document.getElementById('lose-screen').style.display = 'block';
 }
 
 function handleGuess(letter) {
@@ -203,6 +225,7 @@ function restart() {
     let hintContainer = document.getElementById('hint-container');
     hintContainer.innerHTML = '';
     hintContainer.style.display = 'none';
+    document.getElementById('lose-screen').style.display = 'none';
     hintButton.style.display = 'block';
 }
 
@@ -261,13 +284,16 @@ displayGuesses();
 let restartButton = document.getElementById('restart-button');
 restartButton.addEventListener('click', restart);
 
+let restartButton2 = document.getElementById('restart-button-2');
+restartButton2.addEventListener('click', restart);
+
 let hintButton = document.getElementById('hint-button');
 hintButton.addEventListener('click', giveHint);
 
 function giveHint() {
     let hintContainer = document.getElementById('hint-container');
     hintButton.style.display = 'none';
-    hintContainer.style.display = 'block';
+    hintContainer.style.display = 'inline-block';
     hintContainer.innerHTML = 'Hint: ' + dinosaurHint;
     hintContainer.classList.add('slide-in'); // add animation class
 }

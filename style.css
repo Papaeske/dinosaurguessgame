@@ -64,11 +64,17 @@ button:hover {
 	font-family: Arial, sans-serif;
 	font-size: 14px;
 	line-height: 1.5;
-	margin: 0 auto;
-	text-align: center;
 	display: none;
-	width: 30%;
-}  
+	min-width: 100px;
+	margin-bottom: 37px;
+	/* center horizontally */
+	margin-left: auto;
+	margin-right: auto;
+  }
+
+#parent {
+	text-align: center;
+}
 
 #dinosaur-image {
 	display: block;
@@ -97,7 +103,66 @@ button:hover {
 	text-align: justify;
 	cursor: pointer;
 }
+
+#lose-screen {
+	display: none;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.8);
+	z-index: 100;
+  }
   
+  #funny-gif {
+	position: absolute;
+	top: 45%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 45%;
+	height: 45%;
+  }
+
+  #restart-button-2 {
+	width: 10%;
+	height: 7%;
+	top: 75%;
+	left: 50%;
+	position: absolute;
+	text-align: center;
+	transform: translate(-50%, -50%);
+	font-size: 1vw; /* set font size relative to viewport width */
+	font-weight: bold;
+	border: 4px solid #000000;
+	background-color: #1d1d1d;
+  }  
+
+  #restart-button-2:hover {
+	background-color: #0a0a0a;
+  }
+
+  #lose-text {
+	position: absolute;
+	top: 3%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 1000;
+	font-size: 8em;
+	color: #ff0000; 
+	text-shadow: -6px -6px 0 #000, 6px -6px 0 #000, -6px 6px 0 #000, 6px 6px 0 #000;
+  }
+
+  #correct {
+	position: absolute;
+	top: 70%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 1000;
+	font-size: 2em;
+	color: #ff0000; 
+	text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
+  }
 
 @keyframes slideIn {
 	from {

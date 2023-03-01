@@ -13,6 +13,9 @@
 	<div id="dinosaur-container"></div>
 	<div id="score-container">Score: 0</div>
 	<button id="restart-button">Restart</button>
+	<div id="parent">
+		<div id="hint-container"></div> 
+	</div>
 	<button id="hint-button">Hint</button>
 	<div id="keyboard-container">
 		<button class="letter">A</button>
@@ -41,8 +44,13 @@
 		<button class="letter">X</button>
 		<button class="letter">Y</button>
 		<button class="letter">Z</button>
-	</div>	  
-	<div id="hint-container"></div>
+	</div>
+	<div id="lose-screen">
+		<h2 id="lose-text">You lost!</h2>
+		<img id="funny-gif" src="./fails/1.gif">
+		<h2 id="correct">Correct Answer:</h2>
+		<button id="restart-button-2">Play Again</button>
+	</div>
 	<script src="script.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/tsparticles-confetti@2.9.3/tsparticles.confetti.bundle.min.js"></script>
 </body>
