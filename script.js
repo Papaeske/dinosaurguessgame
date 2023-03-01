@@ -32,18 +32,6 @@ const words = [
     'giganotosaurus',
     'kentrosaurus',
     'maiasaura',
-    'nodosaurus',
-    'pachycephalosaurus',
-    'quetzalcoatlus',
-    'raptor',
-    'sarcosuchus',
-    'tapejara',
-    'udanoceratops',
-    'vulcanodon',
-    'wuerhosaurus',
-    'xenoceratops',
-    'yangchuanosaurus',
-    'zalmoxes'
 ];
 const dinosaurs = [
     'Tyrannosaurus',
@@ -79,62 +67,41 @@ const dinosaurs = [
     'Giganotosaurus',
     'Kentrosaurus',
     'Maiasaura',
-    'Nodosaurus',
-    'Pachycephalosaurus',
-    'Quetzalcoatlus',
-    'Raptor',
-    'Sarcosuchus',
-    'Tapejara',
-    'Udanoceratops',
-    'Vulcanodon',
-    'Wuerhosaurus',
-    'Xenoceratops',
-    'Yangchuanosaurus',
-    'Zalmoxes'
 ];
 const hints = [
-    'One of the largest carnivorous dinosaurs that ever lived',
-    'A small, fast predator known for its sickle-shaped claws',
-    'A heavily armored herbivore with distinctive plates on its back',
-    'A massive herbivore with three horns and a bony frill on its head',
-    'A giant herbivore with a long neck and forelimbs',
-    'A long-necked herbivore with a whip-like tail',
-    'A heavily armored herbivore with a club-like tail',
-    'An early bird-like dinosaur with feathers',
-    'A large carnivorous dinosaur with sharp teeth and claws',
-    'A herbivore with a distinctive hollow crest on its head',
-    'A large herbivore with long claws on its hands',
-    'One of the largest carnivorous dinosaurs that ever lived, with a sail on its back',
-    'A small carnivorous dinosaur known for its sickle-shaped claws and role in the Jurassic Park franchise',
-    'A fast, ostrich-like dinosaur that lived in herds',
-    'A small carnivorous dinosaur known for stealing and eating the eggs of other dinosaurs',
-    'A venomous carnivorous dinosaur with a frill around its neck',
-    'A large herbivore known for its thumb spike',
-    'A small feathered dinosaur with sharp teeth and claws',
-    'A small, bird-like dinosaur with a large brain and big eyes',
-    'A large carnivorous dinosaur with small arms and horns above its eyes',
-    'A fast, bird-like dinosaur that lived in herds',
-    'A small, bird-like dinosaur with a toothless beak',
-    'One of the largest dinosaurs that ever lived, with a long neck and tail',
-    'A long-necked herbivore with a small head and long tail',
-    'A flying reptile with a wingspan up to 33 feet',
-    'A small carnivorous dinosaur known for its role in the Jurassic Park franchise',
-    'A large carnivorous dinosaur with a distinctive crest on its head',
-    'A large herbivore with a shield of bony plates on its back',
-    'One of the largest carnivorous dinosaurs that ever lived, with massive jaws and teeth',
-    'A heavily armored herbivore with spikes on its back and tail',
-    'A large herbivore with a thick skull and bony dome on its head',
-    'A giant flying reptile with a wingspan up to 36 feet',
-    'A small, fast predator with sharp teeth and claws',
-    'A prehistoric crocodile with long jaws and sharp teeth',
-    'A small flying reptile with a distinctive head crest',
-    'A herbivore with a large frill around its head',
-    'A large herbivore with a dome-shaped skull and bony spikes on its tail',
-    'A giant flying reptile with a long, narrow beak',
-    'A large herbivore with distinctive spiky plates on its back',
-    'A medium-sized herbivore with a distinctive pattern of bony spikes on its head',
-    'A large carnivorous dinosaur with a long, narrow snout and sharp teeth',
-    'A small herbivore with a distinctive bony frill on its head'
+    'One of the largest carnivorous dinosaurs that ever lived.',
+    'A small, agile dinosaur with a deadly curved claw on each foot.',
+    'A herbivorous dinosaur with distinctive rows of bony plates along its back and a spiked tail.',
+    'A large, herbivorous dinosaur with three horns on its head and a frill around its neck.',
+    'A giant herbivorous dinosaur with a long neck and front legs that were longer than its back legs.',
+    'Another giant herbivorous dinosaur with a very long neck and a whip-like tail.',
+    'A heavily armored herbivorous dinosaur with a club-like tail.',
+    'A small, bird-like dinosaur with feathers and wings, believed to be an early ancestor of birds.',
+    'A large carnivorous dinosaur with sharp teeth and claws.',
+    'A herbivorous dinosaur with a distinctive curved crest on its head.',
+    'A large, herbivorous dinosaur with long, sharp claws that may have been used for self-defense or for reaching leaves on tall trees.',
+    'A large, carnivorous dinosaur with a sail-like structure on its back and long, narrow jaws filled with sharp teeth.',
+    'A carnivorous dinosaur with sharp teeth and sickle-shaped claws on each foot.',
+    'A fast-running, ostrich-like dinosaur with a long, slender neck and sharp claws on its hands and feet.',
+    'A small, bird-like dinosaur with a beak and feathered arms, which may have been used to brood its eggs.',
+    'A carnivorous dinosaur with distinctive crests on its head and a venomous bite, as portrayed in the movie Jurassic Park (though this is not accurate to the real dinosaur).',
+    'A herbivorous dinosaur with a thumb spike that may have been used for defense or foraging.',
+    'A small, feathered dinosaur with sharp teeth and claws.',
+    'A small, carnivorous dinosaur with a large brain relative to its body size.',
+    'A carnivorous dinosaur with two small horns on its head and a thick, muscular neck.',
+    'A fast-running dinosaur with a toothless beak and long, powerful legs.',
+    'A small, bird-like dinosaur with a toothless beak and feathers.',
+    'A giant, herbivorous dinosaur with a very long neck and tail.',
+    'A herbivorous dinosaur with a large, bony crest on its head.',
+    'A large, herbivorous dinosaur with a long neck and tail.',
+    'Not actually a dinosaur, but a type of flying reptile with wings made of skin.',
+    'A small, carnivorous dinosaur with sharp teeth and three-fingered hands.',
+    'A large, carnivorous dinosaur with a distinctive crest on its head.',
+    'A flying reptile with a long tail and large wingspan.',
+    'A herbivorous dinosaur with a single horn on its head.',
+    'A large, carnivorous dinosaur with sharp teeth and long, muscular legs.',
+    'A heavily armored herbivorous dinosaur with long, pointed spikes on its back and tail.',
+    'A herbivorous dinosaur with a beak and a crest on its head.'
 ];
 
 let word; // the word to guess
@@ -180,13 +147,11 @@ function displayWord() {
 
 function displayGuesses() {
     let guessesContainer = document.getElementById('guesses-container');
-    guessesContainer.innerHTML = 'Guesses: ' + guesses.join(', ');
+    guessesContainer.innerHTML = 'Lives: ' + lives + ', Guesses: ' + guesses.join(', ');
 }
 
 function checkWin() {
     if (word.split('').every(letter => guesses.includes(letter))) {
-        let dinosaurContainer = document.getElementById('dinosaur-container');
-        dinosaurContainer.innerHTML = 'Dinosaur: ' + dinosaurName;
         fireConfetti();
         handleCorrectGuess();
     }
