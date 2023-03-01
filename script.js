@@ -114,6 +114,8 @@ const gifs = [
     "./fails/7.gif",
     "./fails/8.gif",
     "./fails/9.gif",
+    "./fails/10.gif",
+    "./fails/11.gif",
 ];
 
 let word; // the word to guess
