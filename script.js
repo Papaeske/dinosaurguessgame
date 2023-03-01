@@ -215,7 +215,6 @@ function handleGuess(letter) {
 
 function restart() {
     chooseWord();
-    fireConfetti()
     guesses = [];
     lives = 7;
     displayWord();
